@@ -7,8 +7,7 @@ mkdir -p /root/swarm/clef/clef-{1,2,3}
 chmod 777 -R /root/swarm
 mkdir -p /root/bee
 cd /root/bee
-wget -c https://raw.githubusercontent.com/diamond001/h12h21_boy_fileServer/main/docker-compose.yml
+wget https://raw.githubusercontent.com/diamond001/h12h21_boy_fileServer/main/3nodes_t.yml -O docker-compose.yml
 docker-compose up -d
-# chmod 777 -R /root/swarm
 docker-compose restart
 tree -a /root/swarm
