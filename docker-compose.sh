@@ -24,12 +24,3 @@ apt-get install docker-ce docker-ce-cli containerd.io
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-
-# to download bee, .env and docker-compose.yaml
-# https://github.com/ethersphere/bee/tree/master/packaging/docker
-mkdir -p bee && cd bee
-scp -r root@47.241.250.179:/root/fileServer/docker-compose.yml ./
-scp -r root@47.241.250.179:/root/fileServer/.env ./
-docker-compose pull
-# sleep 5
-# docker-compose up –d
