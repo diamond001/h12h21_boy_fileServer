@@ -2,7 +2,7 @@
 rm -rvf *
 wget https://raw.githubusercontent.com/diamond001/h12h21_boy_fileServer/main/docker-compose.sh
 chmod +x docker-compose.sh
-docker-compose.sh
+./docker-compose.sh
 ################
 #docker stop $(docker ps -aq)
 #docker rm $(docker ps -aq)
