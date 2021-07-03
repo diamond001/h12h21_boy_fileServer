@@ -53,7 +53,7 @@ services:
       - BEE_VERBOSITY=5
       - BEE_TRACING_ENABLE=true
       - BEE_SWAP_ENABLE=true 
-      - BEE_SWAP_ENDPOINT=http://192.168.0.124:8545
+      - BEE_SWAP_ENDPOINT=http://192.168.0.131:8545
       - BEE_PASSWORD=ju765dRi
       - BEE_FULL_NODE=true
       - BEE_SWAP_INITIAL_DEPOSIT=0
@@ -95,7 +95,7 @@ services:
       - BEE_VERBOSITY=5
       - BEE_TRACING_ENABLE=true
       - BEE_SWAP_ENABLE=true 
-      - BEE_SWAP_ENDPOINT=http://192.168.0.124:8545
+      - BEE_SWAP_ENDPOINT=http://192.168.0.131:8545
       - BEE_PASSWORD=ju765dRi
       - BEE_FULL_NODE=true
       - BEE_SWAP_INITIAL_DEPOSIT=0
@@ -137,7 +137,7 @@ services:
       - BEE_VERBOSITY=5
       - BEE_TRACING_ENABLE=true
       - BEE_SWAP_ENABLE=true 
-      - BEE_SWAP_ENDPOINT=http://192.168.0.124:8545
+      - BEE_SWAP_ENDPOINT=http://192.168.0.131:8545
       - BEE_PASSWORD=ju765dRi
       - BEE_FULL_NODE=true
       - BEE_SWAP_INITIAL_DEPOSIT=0

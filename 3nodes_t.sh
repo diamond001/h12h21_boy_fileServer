@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rvf *
 docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 docker rmi $(docker images -q)
@@ -10,4 +11,5 @@ cd /root/bee
 wget https://raw.githubusercontent.com/diamond001/h12h21_boy_fileServer/main/3nodes_t.yml -O docker-compose.yml
 docker-compose up -d
 docker-compose restart
+apt install tree
 tree -a /root/swarm
