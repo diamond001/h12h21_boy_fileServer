@@ -1,11 +1,5 @@
 version: "3"
-networks:
-  proxy:
-    driver: bridge
-    ipam:
-      config: 
-        - subnet: "172.16.1.0/16"
-          gateway: "172.16.1.1"
+
 services:
   clef-1:
     image: ethersphere/clef:0.5.0
@@ -14,11 +8,7 @@ services:
       - CLEF_CHAINID=100
     volumes:
       - /root/swarm/clef/clef-1:/app/data
-    tty: true
     command: full
-    networks:
-      proxy:
-        ipv4_address: 172.16.1.87
 
   clef-2:
     image: ethersphere/clef:0.5.0
@@ -27,9 +17,6 @@ services:
       - CLEF_CHAINID=100
     volumes:
       - /root/swarm/clef/clef-2:/app/data
-    networks:
-      proxy:
-        ipv4_address: 172.16.1.88
     command: full
 
   clef-3:
@@ -39,9 +26,6 @@ services:
       - CLEF_CHAINID=100
     volumes:
       - /root/swarm/clef/clef-3:/app/data
-    networks:
-      proxy:
-        ipv4_address: 172.16.1.89
     command: full
 
   node-1:
@@ -52,7 +36,7 @@ services:
       - BEE_BOOTNODE
       - BEE_BOOTNODE_MODE=false
       - BEE_CLEF_SIGNER_ENABLE=true
-      - BEE_CLEF_SIGNER_ENDPOINT=http://172.16.1.87:8550
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-1:8550
       - BEE_CONFIG
       - BEE_CORS_ALLOWED_ORIGINS="*"
       - BEE_DATA_DIR
@@ -94,7 +78,7 @@ services:
       - BEE_BOOTNODE
       - BEE_BOOTNODE_MODE=false
       - BEE_CLEF_SIGNER_ENABLE=true
-      - BEE_CLEF_SIGNER_ENDPOINT=http://172.16.1.88:8550
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-2:8550
       - BEE_CONFIG
       - BEE_CORS_ALLOWED_ORIGINS="*"
       - BEE_DATA_DIR
@@ -136,7 +120,7 @@ services:
       - BEE_BOOTNODE
       - BEE_BOOTNODE_MODE=false
       - BEE_CLEF_SIGNER_ENABLE=true
-      - BEE_CLEF_SIGNER_ENDPOINT=http://172.16.1.89:8550
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-3:8550
       - BEE_CONFIG
       - BEE_CORS_ALLOWED_ORIGINS="*"
       - BEE_DATA_DIR
@@ -169,6 +153,7 @@ services:
     command: start
     depends_on:
       - clef-3
+
 volumes:
   clef-1:
   clef-2:
@@ -176,4 +161,3 @@ volumes:
   node-1:
   node-2:
   node-3:
-

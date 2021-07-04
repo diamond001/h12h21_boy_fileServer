@@ -11,4 +11,5 @@ cd /root/bee
 wget https://raw.githubusercontent.com/diamond001/h12h21_boy_fileServer/main/3nodes_b.yml -O docker-compose.yml
 docker-compose up -d
 docker-compose restart
+apt-get install tree
 tree -a /root/swarm
