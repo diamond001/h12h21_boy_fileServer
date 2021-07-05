@@ -1,0 +1,2 @@
+#!/bin/bash
+/usr/bin/nohup  /root/geth/openethereum --chain xdai --base-path=/root/geth/data --db-path=/root/geth/data --jsonrpc-port=8545 --jsonrpc-cors=all --jsonrpc-interface=all --jsonrpc-hosts=all --jsonrpc-apis=all --ws-port=8546 --ws-interface=all --ws-apis=all --ws-origins=all --ws-hosts=all --ws-max-connections=10000 --min-peers=1000 --no-ancient-blocks --port=30303 > /root/geth/1.log 2>&1 &
